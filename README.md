@@ -3,7 +3,7 @@ Sistema de Cadastro de Anúncios feito para o desafio da Academia Capgemini
 
 Para Compilar e executar o programa é preciso está com o MySQL instalado no computador para que possa funcionar corretamente por causa do banco de dados.
 Antes de executar o programa precisa ser criado o banco de dados com o nome anunciosdb , para isso execute o comando MySQL create database anunciosdb no seu terminal do MySQL
-ou utilize o script que acompanha o projeto.
+ou utilize o script anunciosdb.sql que acompanha o projeto.
 
 Após está com o banco de dados criado importe o projeto como projeto maven e o execute como aplicação java, o sistema iniciará e ficará disponivel para uso no navegador de
 internet que desejar utilizar.
