@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>CadastroDeAnunciosApp</title>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	 <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	
+	<h1>Cadastro de Anúncios</h1>
+	<div class="container form anuncio">
+	<form class="container" method= "post">
+		Cliente <input type="text" required name="nomeCliente"/>
+		Nome do Anúncio <input type="text" required name="nomeAnuncio"/>
+		Data Início <input type= "date" id="dataUm" onchange= chamar() required name="dataInicio"/>
+		Data Término <input type= "date"id="dataDois" onchange= chamar() required name="dataTermino"/>
+		Quantidade de Dias <input type="text" id="numeroDias" readOnly=true name="quantDias"/>	
+		Valor Investido por dia <input pattern="[0-9. || 0-9,]+" type="text" required name="valorInvestido"/>  
+		<button type="submit">Salvar</button>		
+	</form>
+	</div>
+	<a href="/"><button>Voltar a página inicial</button></a>
+	<script type="text/javascript">
+	function difDias(){
+    	//instantaneos do objeto Date, veja explicação no final da resposta
+    	var dataUm = new Date(document.getElementById("dataUm").value);
+    	var dataDois = new Date(document.getElementById("dataDois").value);
+    	return parseInt((dataDois - dataUm) / (24 * 3600 * 1000));
+	}
+
+	function chamar(){
+    document.getElementById("numeroDias").value = isNaN(difDias()) ? "Selecione a outra data" : difDias();  
+	}
+	</script>
+	
+		 <!--JavaScript at end of body for optimized loading-->
+		
+	  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>			 
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+
+</html>
